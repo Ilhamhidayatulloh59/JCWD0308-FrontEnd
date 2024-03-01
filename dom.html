@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function update(){
+            const element = document.getElementById("myElement")
+            // console.log(element)
+            element.innerText = "Updated Text"
+            element.style.color = "red"
+
+            const button = document.getElementById("myButton")
+            button.addEventListener("click", function() {
+                alert("button clicked")
+            })
+        }
+
+        function submit(){
+            const input = document.getElementById("input")
+            console.log(input.value)
+            
+            const element = document.getElementById("myElement")
+            element.innerText = input.value
+        }
+
+        function sum() {
+            const num1 = +document.getElementById("num1").value
+            const num2 = +document.getElementById("num2").value
+            const element = document.getElementById("myElement")
+            element.innerText = num1 + num2
+        }
+    </script>
+</head>
+<body>
+    <h1 id="myElement">Original Text</h1>
+    <button id="myButton" onclick="update()">updated text</button>
+    <br />
+
+    <input type="text" id="input" />
+    <button onclick="submit()">submit</button><br />
+
+    <input type="number" id="num1"> 
+    + 
+    <input type="number" id="num2"> 
+    <button onclick="sum()">=</button>
+</body>
+</html>
