@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import TodoList from "./todo";
 
 export const ComponentCallback = () => {
   const [count, setCount] = useState(0);
   const [todo, setTodo] = useState([]);
 
-  const addTodo = () => {
+  const addTodo = useCallback(() => {
     setTodo(() => [...todo, "new value"]);
-  };
+  }, [todo]);
 
   return (
     <div>

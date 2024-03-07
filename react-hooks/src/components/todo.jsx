@@ -1,7 +1,7 @@
 import { memo } from "react"
 
 const TodoList = ({ todo, addTodo }) => {
-    console.log(todo)
+    console.log("render child")
     return (
         <div>
             <h2>My Todo</h2>
@@ -17,4 +17,4 @@ const TodoList = ({ todo, addTodo }) => {
     )
 }
 
-export default TodoList
+export default memo(TodoList)
