@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Andi",
+      "email": "andi@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "Budi",
+      "email": "budi@gmail.com"
+    },
+    {
+      "id": "3",
+      "name": "Dinda",
+      "email": "cindy@gmail.com"
+    },
+    {
+      "id": "7dfe",
+      "name": "John",
+      "email": "john@gmail.com"
+    },
+    {
+      "id": "6049",
+      "name": "Ilham",
+      "email": "ilham@purwadhika.com"
+    },
+    {
+      "id": "7c24",
+      "name": "Ilham",
+      "email": "ilham@gmail.com",
+      "password": "Asd123"
+    }
+  ]
+}
