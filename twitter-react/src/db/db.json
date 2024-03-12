@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "id": "0b78",
+      "nama": "Ilham",
+      "email": "ilham@purwadhika.com",
+      "password": "Asd1234"
+    },
+    {
+      "id": "6dcb",
+      "nama": "John",
+      "email": "john@gmail.com",
+      "password": "Asd1234"
+    }
+  ],
+  "tweets": [
+    {
+      "id": "d83d",
+      "text": "ABCDEFGHIJKL",
+      "userId": "0b78"
+    },
+    {
+      "id": "dfc3",
+      "text": "MNOPQRSTU",
+      "userId": "0b78"
+    },
+    {
+      "id": "9417",
+      "text": "VWXYZ",
+      "userId": "0b78"
+    }
+  ]
+}
