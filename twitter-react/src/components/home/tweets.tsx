@@ -1,11 +1,12 @@
 import { Avatar, Box, Button, CircularProgress, CircularProgressLabel, Divider, Flex, Text, Textarea } from "@chakra-ui/react"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { TweetItem } from "./tweetItem"
 import { useSelector } from "react-redux"
 import { axios } from "../../api/axios"
 
 export const Tweets = () => {
     const [text, setText] = useState<string>('')
+    const [data, setData] = useState([])
     const user = useSelector((state) => state?.user?.value)
     const textRef = useRef(null)
     const handleChange = () => {
@@ -28,6 +29,21 @@ export const Tweets = () => {
             console.log(err)
         }
     }
+    
+    const getData = async () => {
+        try {
+            const response = await axios('tweets?_embed=user')
+            setData(response.data)
+            console.log(response.data);
+            
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    useEffect(() => {
+        getData()
+    }, [])
 
     return (
         <Box>
@@ -40,7 +56,7 @@ export const Tweets = () => {
                 </Flex>
             </Flex>
             <Flex p={"20px"} gap={'10px'} borderBottom={'1px solid'} borderBottomColor={'gray.100'}>
-                <Avatar />
+                <Avatar name={user.nama} />
                 <Flex flexDirection={'column'} w={'full'}>
                     <Textarea
                         onChange={handleChange} 
@@ -61,10 +77,13 @@ export const Tweets = () => {
                     </Flex>
                 </Flex>
             </Flex>
-            <TweetItem name="John" email="john@gmail.com" text="Jam 3 bahas" />
-            <TweetItem name="John" email="john@gmail.com" text="Jam 3 bahas" />
-            <TweetItem name="John" email="john@gmail.com" text="Jam 3 bahas" />
-            <TweetItem name="John" email="john@gmail.com" text="Jam 3 bahas" />
+            {
+                data.map((item) => {
+                    return (
+                        <TweetItem name={item.user.nama} email={item.user.email} text={item.text} />
+                    )
+                })
+            }
         </Box>
     )
 }

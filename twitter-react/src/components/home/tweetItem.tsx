@@ -10,7 +10,7 @@ interface ITweetItem {
 export const TweetItem: React.FC<ITweetItem> = ({ name, email, text }) => {
     return (
         <Flex p={"20px"} gap={'10px'} borderBottom={'1px solid'} borderBottomColor={'gray.100'}>
-            <Avatar />
+            <Avatar name={name} />
             <Flex flexDirection={'column'} w={'full'}>
                 <Flex fontSize={'18px'} gap={'10px'}>
                     <Text fontWeight={'bold'}>{name}</Text>
